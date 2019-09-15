@@ -1,0 +1,47 @@
+<!-- This is the code for the Roster Input module -->
+
+<!DOCTYPE html>
+<html>
+
+<!-- This first block loads all the javascript files and the navigation bar-->
+
+  <head>
+    <title>Roster Input</title>
+    <script>window.nodeRequire = require; delete window.require; delete window.exports; delete window.module;</script>
+    <script src="jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="JS/basicscripts.js"></script>
+    <script src="JS/rosterinput.js"></script>
+    <link href="CSS/rosterinput.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet" >
+  </head>
+  
+  <body>
+
+    <ul class="nav">
+      <li><a href="rosterinput.html">Roster Input</a></li>
+      <li><a href="advanceddatainput.html">Advanced Data Input</a></li>
+      <li><a href="basicdatainput.html">Basic Data Input</a></li>      <li><a href="playinput.html">Play Input</a></li>
+      <li><a href="individualsummaries.html">Individual Summaries</a></li>
+      <li><a href="teamsummary.html">Team Summary</a></li>
+    </ul>
+
+<!-- This section loads the input options for adding/removing players. This section also displays the current roster -->
+    
+    <p>Player:</p>
+    <input type="text" id="player" value="">
+    <button onclick="addPlayer()">Add Player</button>
+
+    <p></p>
+
+    <input type="text" id="rplayer" value="">
+    <button onclick="removePlayer()">Remove Player</button>
+
+    <h3>Roster:</h3>
+
+    <ul id="currentroster">
+    </ul>
+
+    <button onclick="saveChanges()">Save Changes</button>
+
+  </body>
+</html>

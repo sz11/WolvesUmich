@@ -1,0 +1,64 @@
+<!-- This is the code for the Play Input module -->
+
+<!DOCTYPE html>
+<html>
+
+<!-- This first block loads all the javascript files and the navigation bar-->
+
+    <head>
+        <title>Play Input</title>
+        <script>window.nodeRequire = require; delete window.require; delete window.exports; delete window.module;</script>
+        <meta name="viewport" content="width=device-width">
+        <script src="Libraries/p5.min.js"></script>
+        <script src="Libraries/jquery.js"></script>
+        <script src="JS/basicscripts.js"></script>
+        <script src="JS/playinput.js"></script>
+        <link href="CSS/playinput.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet" >
+    </head>
+
+    <body>
+        <ul class="nav">
+            <li><a href="rosterinput.html">Roster Input</a></li>
+            <li><a href="advanceddatainput.html">Advanced Data Input</a></li>
+            <li><a href="basicdatainput.html">Basic Data Input</a></li>
+            <li><a href ="playinput.html">Play Input</a></li>
+            <li><a href="individualsummaries.html">Individual Summaries</a></li>
+            <li><a href="teamsummary.html">Team Summary</a></li>
+        </ul>
+
+<!-- This block is for adding the initial and final data such as who passed/shot/dribbled, where they did it from, and who/where the action was to. It also allows you to calculate the probability of success of a hypothetical play based on statistics from previous games -->
+
+        <button id = "initialdatabutton" onclick="addInitialData()">Add Initial Data</button>
+        <button id = "finaldatabutton" onclick="addFinalData()">Add Final Position Data</button>
+        <button id = "successprobabilitybutton" onclick="calcProbSuccess()">Calculate Probability of Success</button>
+        <button id = "weakestlinkbutton" onclick="weakestLink()">What is the Weakest Link?</button>
+        <button id = "alternativeplayerbutton" onclick="alternativePlayer()">Who is the alternative player?</button>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Select Player</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button onclick="myFunction2()" class="dropbtn">Select Action</button>
+            <div id="actionDropdown" class="dropdown-content2">
+                <a onclick="chooseAction('Shot')">Shot</a>
+                <a onclick="chooseAction('Pass')">Pass</a>
+                <a onclick="chooseAction('Dribble')">Dribble</a>
+            </div>
+        </div>
+
+        <div>
+            <h3>Probability of success: </h3>
+            <p id="probabilityOfSuccessid"></p>
+            <h3>Weakest Link: </h3>
+            <p id="weakestLinkid"></p>
+            <h3>Alternative Player: </h3>
+            <p id="alternativePlayerid"></p>
+
+    </body>
+
+</html>

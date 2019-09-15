@@ -1,0 +1,128 @@
+<!-- This is the code for the Basic Data Input module -->
+
+<!DOCTYPE html>
+<html>
+
+<!-- This first block loads all the javascript files and the navigation bar-->
+
+	<head>
+    	<title>Data Input</title>
+		<script>window.nodeRequire = require; delete window.require; delete window.exports; delete window.module;</script>
+		<script src="Libraries/p5.min.js"></script>
+		<script src="Libraries/jquery.js"></script>
+		<script src="JS/basicscripts.js"></script>
+		<script src="JS/basicdatainput.js"></script>
+		<link href="CSS/basicdatainput.css" type="text/css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet" >
+	</head>
+
+	<body>
+		<ul class="nav">
+			<li><a href="rosterinput.html">Roster Input</a></li>
+			<li><a href="advanceddatainput.html">Advanced Data Input</a></li>
+			<li><a href="basicdatainput.html">Basic Data Input</a></li>
+			<li><a href ="playinput.html">Play Input</a></li>
+			<li><a href="individualsummaries.html">Individual Summaries</a></li>
+			<li><a href="teamsummary.html">Team Summary</a></li>
+		</ul>
+
+<!-- This next piece allows you to choose the player and then the rest of the values populate based on the player you have selected -->
+
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn">Select Player</button>
+			<div id="myDropdown" class="dropdown-content">
+				<a onclick="choosePlayer('Opponent')">Opponent</a>
+			</div>
+		</div>
+   
+		<button id = "savebutton" onclick="saveData()">Save Data</button>
+		<h3 id="previewid"></h3>
+
+<!-- This set of code contains many divisions. Each div is for a different statistic and it displays the current value, as well as buttons to add or subtract 1 from the total -->
+
+		<div>
+			<p>Defensive Rebounds:</p>
+			<p id="defensiverebound"></p>
+			<button onclick="addToData('Defensive Rebound')">Add 1</button> <button onclick="subtractFromData('Defensive Rebound')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Offensive Rebounds:</p>
+			<p id="offensiverebound"></p>
+			<button onclick="addToData('Offensive Rebound')">Add 1</button> <button onclick="subtractFromData('Offensive Rebound')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Steals:</p>
+			<p id="steals"></p>
+			<button onclick="addToData('Steals')">Add 1</button> <button onclick="subtractFromData('Steals')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Personal Fouls:</p>
+			<p id="personalfoul"></p>
+			<button onclick="addToData('Personal Foul')">Add 1</button> <button onclick="subtractFromData('Personal Foul')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Technical Fouls:</p>
+			<p id="technicalfoul"></p>
+			<button onclick="addToData('Technical Foul')">Add 1</button> <button onclick="subtractFromData('Technical Foul')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Flagrant Fouls:</p>
+			<p id="flagrantfoul"></p>
+			<button onclick="addToData('Flagrant Foul')">Add 1</button> <button onclick="subtractFromData('Flagrant Foul')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Blocks:</p>
+			<p id="blocks"></p>
+			<button onclick="addToData('Blocks')">Add 1</button> <button onclick="subtractFromData('Blocks')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Blocks Against:</p>
+			<p id="blocksagainst"></p>
+			<button onclick="addToData('Blocks Against')">Add 1</button> <button onclick="subtractFromData('Blocks Against')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>2pt Shots Made:</p>
+			<p id="2ptmade"></p>
+			<button onclick="addToData('2pt Made')">Add 1</button> <button onclick="subtractFromData('2pt Made')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>2pt Shots Missed:</p>
+			<p id="2ptmissed"></p>
+			<button onclick="addToData('2pt Missed')">Add 1</button> <button onclick="subtractFromData('2pt Missed')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>3pt Shots Made:</p>
+			<p id="3ptmade"></p>
+			<button onclick="addToData('3pt Made')">Add 1</button> <button onclick="subtractFromData('3pt Made')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>3pt Shots Missed:</p>
+			<p id="3ptmissed"></p>
+			<button onclick="addToData('3pt Missed')">Add 1</button> <button onclick="subtractFromData('3pt Missed')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Free Throws Made:</p>
+			<p id="ftmade"></p>
+			<button onclick="addToData('FT Made')">Add 1</button> <button onclick="subtractFromData('FT Made')">Subtract 1</button>
+			<p></p>
+		</div>
+		<div>
+			<p>Free Throws Missed:</p>
+			<p id="ftmissed"></p>
+			<button onclick="addToData('FT Missed')">Add 1</button> <button onclick="subtractFromData('FT Missed')">Subtract 1</button>
+			<p></p>
+		</div>
+	</body>
+</html>

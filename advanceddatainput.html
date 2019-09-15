@@ -1,0 +1,68 @@
+<!-- This is the code for the Advanced Data Input module -->
+
+<!DOCTYPE html>
+<html>
+
+<!-- This first block loads all the javascript files and the navigation bar-->
+
+	<head>
+    	<title>Data Input</title>
+		<script>window.nodeRequire = require; delete window.require; delete window.exports; delete window.module;</script>
+		<script src="Libraries/p5.min.js"></script>
+		<script src="Libraries/jquery.js"></script>
+		<script src="JS/basicscripts.js"></script>
+		<script src="JS/advanceddatainput.js"></script>
+		<link href="CSS/advanceddatainput.css" type="text/css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet" >
+	</head>
+
+	<body>
+		<ul class="nav">
+			<li><a href="rosterinput.html">Roster Input</a></li>
+			<li><a href="advanceddatainput.html">Advanced Data Input</a></li>
+			<li><a href="basicdatainput.html">Basic Data Input</a></li>
+			<li><a href ="playinput.html">Play Input</a></li>
+			<li><a href="individualsummaries.html">Individual Summaries</a></li>
+			<li><a href="teamsummary.html">Team Summary</a></li>
+		</ul>
+
+<!-- This next block loads the buttons for selecting the pressure level as well as the dropdown menus for choosing the player and the action -->
+
+		<input type="radio" name = "gamemode" id="drill" onclick="drillMode()">Drill<br/>
+		<input type="radio" name = "gamemode" id="scrimmage" onclick="scrimmageMode()">Scrimmage<br/>
+		<input type="radio" name = "gamemode" id="game" onclick="gameMode()">Game</br>
+
+		<button id = "databutton" onclick="addData()">Add Data</button>
+
+		<h2>Change players</h2>
+		<p>Click on the button to open dropdown and change players</p>
+
+
+		<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn">Select Player</button>
+			<div id="myDropdown" class="dropdown-content">
+			</div>
+		</div>
+
+		<div class="dropdown">
+        	<button onclick="myFunction2()" class="dropbtn">Select Action</button>
+        	<div id="actionDropdown" class="dropdown-content2">
+          		<a onclick="chooseAction('Shot Made')">Shot Made</a>
+          		<a onclick="chooseAction('Shot Missed')">Shot Missed</a>
+          		<a onclick="chooseAction('Pass Made')">Pass Made</a>
+          		<a onclick="chooseAction('Pass Missed')">Pass Missed</a>
+          		<a onclick="chooseAction('Advantage Pass')">Advantage Pass</a>
+          		<a onclick="chooseAction('Assist')">Assist</a>
+          		<a onclick="chooseAction('Turnover')">Turnover</a>
+        	</div>
+      	</div>
+
+		<button id = "savebutton" onclick="saveData()">Save Data</button>
+		<button id = "freethrow" onclick="addFT()">Free Throw</button>
+
+<!-- This block displays the current action, player, pressure, and zone that is selected -->
+
+		<p id="previewid"></p>
+		<p id="added"></p>
+	</body>
+</html>
